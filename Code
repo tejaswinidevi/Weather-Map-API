@@ -1,0 +1,64 @@
+#Assert Latitude And Longitude
+
+pm.test("Latitude is 51.51 and the Longitude is -0.13", () => {
+  const responseJson = pm.response.json();
+  pm.expect(responseJson.coord.lon).to.eql(-0.13);
+  pm.expect(responseJson.coord.lat).to.eql(51.51);
+  pm.expect(pm.response.code).to.eql(200);
+});
+
+#Assert value types
+
+pm.test("Test data types of the response are as expected", () => {
+  const jsonData = pm.response.json();
+  pm.expect(jsonData.coord).to.be.an("object");
+  pm.expect(jsonData.weather).to.be.a("array");
+  pm.expect(jsonData.base).to.be.a("string");
+  pm.expect(jsonData.main).to.be.an("object");
+  pm.expect(jsonData.visibility).to.be.a("number");
+  pm.expect(jsonData.wind).to.be.an("object");
+  pm.expect(jsonData.clouds).to.be.an("object");
+  pm.expect(jsonData.dt).to.be.a("number");
+  pm.expect(jsonData.sys).to.be.an("object");
+  pm.expect(jsonData.id).to.be.a("number");
+  pm.expect(jsonData.name).to.be.a("string");
+  pm.expect(jsonData.cod).to.be.a("number");
+  pm.expect(pm.response.code).to.eql(200);
+});
+
+
+#Assert name of the city is London
+
+pm.test("Name of the city is London", () => {
+  const responseJson = pm.response.json();
+  pm.expect(responseJson.name).to.eql("London");
+  pm.expect(pm.response.code).to.eql(200);
+});
+
+#Assert name of the country is UK
+
+pm.test("Name of the country is Uk", () => {
+  const responseJson = pm.response.json();
+  pm.expect(responseJson.sys.country).to.eql("uk");
+});
+
+#Negative Response - Don't send q
+
+pm.test("Response is 404 - The requested resource cannot be found", () => {
+  const responseJson = pm.response.json();
+  pm.expect(responseJson.error).to.eql("404");
+});
+
+#Negative Response - Don't send appid
+
+pm.test("Response is 401 - Unauthorized", () => {
+  const responseJson = pm.response.json();
+  pm.expect(responseJson.cod).to.eql(401);
+  pm.expect(responseJson.message).to.eql("Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.");
+});
+
+#Negative Response - Send Invalid Path Param
+
+pm.test("Status code is 404", () => {
+  pm.expect(pm.response.code).to.eql(404);
+});
