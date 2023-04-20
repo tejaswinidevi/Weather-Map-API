@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "808b65ee-cba5-4c36-bd89-0355e9804809",
+		"name": "Weather Map API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Assert Latitude And Longitude",
+			"_postman_id": "b43f25e1-4ac9-4c21-be4e-199e1cc8b9f8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Assert value types",
+			"_postman_id": "599d65fd-49dd-4426-97cd-0ba5e8357806",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Assert name of the city is London",
+			"_postman_id": "1f786cbf-5f58-491a-be1a-ceffca25dbbe",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Assert name of the country is UK",
+			"_postman_id": "a25ac67e-661b-49b8-9e6c-0f0e58ebd508",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Negative Response - Don't send q",
+			"_postman_id": "1d64092f-21e7-4b7b-9b97-08c164d548a6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Negative Response - Don't send appid",
+			"_postman_id": "a4f6240a-72e5-4082-b56e-cc6c1e9d0cfe",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Negative Response - Send Invalid Path Param",
+			"_postman_id": "23660e68-cb77-495d-a416-600ec1b590e4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}
